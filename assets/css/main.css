@@ -7804,16 +7804,17 @@ header .menu a.active::after {
   content: '';
   background: #000000;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  top: 51%;
+  left: 53%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   z-index: 1;
 }
 
 @media screen and (max-width: 767px) {
   .disco .disco__header .header__title::after {
     width: 425px;
+    left: 50%;
   }
 }
 
@@ -8106,16 +8107,17 @@ header .menu a.active::after {
   content: '';
   background: #000000;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  top: 51%;
+  left: 53%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   z-index: 1;
 }
 
 @media screen and (max-width: 767px) {
   .concert .concert__header .header__title::after {
     width: 425px;
+    left: 50%;
   }
 }
 

@@ -7,8 +7,8 @@
 		padding: 38px 15px 302px 15px;
 	}
 	.container {
-		@media screen and (min-width: 1200px) {
-			max-width: 1236px;
+		@media screen and (min-width: 1300px) {
+			max-width: 1200px;
 		}
 	}
 	.row {
@@ -26,7 +26,7 @@
 				.item__right {
 					p {
 						margin-bottom: 25px;
-						padding-right: 41px;
+						padding-right: 22px;
 					}
 				}
 				margin-bottom: 108px;
@@ -42,12 +42,13 @@
 				.item__right {
 					h4 {
 						margin-bottom: 19px;
+						margin-right: -10px;
 					}
 					p {
 						margin-bottom: 19px;
-						padding-right: 80px;
+						padding-right: 20px;
 					}
-					margin-bottom: 86px;
+					margin-bottom: 91px;
 					@media screen and (max-width: 767px) {
 						margin-bottom: 61px;
 					}
@@ -59,13 +60,12 @@
 			&:last-child {
 				.item__right {
 					h4 {
-						margin-bottom: 15px;
-                        white-space: pre-line;
-                        line-height: 1.6;
+						margin-bottom: 19px;
+						white-space: pre-line;
 					}
 					p {
 						margin-bottom: 92px;
-						padding-right: 50px;
+						padding-right: 25px;
 						@media screen and (max-width: 575px) {
 							margin-bottom: 50px;
 						}
@@ -81,13 +81,10 @@
 							height: 36px;
 						}
 					}
-                }
-                .item__left{
-                    padding-top: 58px;
-                }
+				}
 			}
 			.item__left {
-				width: 40.98%;
+				width: 42%;
 				font-family: "Open Sans", sans-serif;
 				@include font-size(14px);
 				font-weight: 700;
@@ -113,7 +110,7 @@
 				}
 			}
 			.item__right {
-				width: 57%;
+				width: 55.9%;
 				font-family: "Open Sans", sans-serif;
 				@media screen and (max-width: 575px) {
 					width: 100%;
@@ -159,7 +156,7 @@
 		padding: 120px 15px 210px 15px;
 	}
 	.container {
-		@media screen and (min-width: 1200px) {
+		@media screen and (min-width: 1300px) {
 			max-width: 1200px;
 		}
 	}
@@ -169,10 +166,10 @@
 	.concert__header {
 		margin-bottom: 465px;
 		@media screen and (max-width: 767px) {
-			margin-bottom: 530px;
+			margin-bottom: 370px;
 		}
 		@media screen and (max-width: 575px) {
-			margin-bottom: 330px;
+			margin-bottom: 300px;
 		}
 		.header__title {
 			margin-bottom: 41px;

@@ -43,6 +43,9 @@
 					h4 {
 						margin-bottom: 19px;
 						margin-right: -10px;
+						@media screen and (max-width: 1199px){
+							margin-right: 0;
+						}
 					}
 					p {
 						margin-bottom: 19px;

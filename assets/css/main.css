@@ -7910,6 +7910,12 @@ header .menu a.active::after {
   margin-right: -10px;
 }
 
+@media screen and (max-width: 1199px) {
+  .disco .disco__content .content__item:nth-child(2) .item__right h4 {
+    margin-right: 0;
+  }
+}
+
 .disco .disco__content .content__item:nth-child(2) .item__right p {
   margin-bottom: 19px;
   padding-right: 20px;

@@ -1,3 +1,6 @@
+// body{
+//   scroll-behavior: smooth;
+// }
 a {
   &:hover {
     text-decoration: none;
@@ -22,3 +25,63 @@ h1, h2, h3, h4, h5 {
 img {
   max-width: 100%;
 }
+.header {
+	display: flex;
+	align-items: center;
+	flex-flow: column;
+	margin-bottom: 150px;
+	@media screen and (max-width: 767px) {
+		margin-bottom: 120px;
+	}
+	@media screen and (max-width: 575px) {
+		margin-bottom: 80px;
+	}
+	.header__title {
+		position: relative;
+		margin-bottom: 36px;
+		@media screen and (max-width: 575px) {
+			margin-bottom: 20px;
+		}
+		&::after {
+			width: 502px;
+			height: 1px;
+			content: "";
+			background: #000000;
+			position: absolute;
+			top: 51%;
+			left: 53%;
+			transform: translate(-50%);
+			z-index: 1;
+			@media screen and (max-width: 767px) {
+				width: 425px;
+				left: 50%;
+			}
+			@media screen and (max-width: 575px) {
+				width: 110%;
+			}
+		}
+	}
+	h2 {
+		@include background-horizontal(#976b4f, #785455);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: #976b4f;
+		@include font-size(50.5px);
+		letter-spacing: 6px;
+		position: relative;
+		z-index: 2;
+		@media screen and (max-width: 575px) {
+			@include font-size(40px);
+		}
+	}
+	p {
+		font-family: "Open Sans", sans-serif;
+		@include font-size(14px);
+		max-width: 720px;
+		text-align: center;
+		letter-spacing: 1px;
+		word-spacing: 3px;
+		line-height: 1.7;
+	}
+}
+

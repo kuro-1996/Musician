@@ -5,8 +5,7 @@ $(document).ready(function() {
 		$("header").toggleClass("change");
 	});
 	//hide menu and scroll to section after click menu item
-	$(".menu a").click(function(e) {
-		e.preventDefault();
+	$(".menu a").click(function() {
 		$(".menu , .menu a , .dropdown-btn__icon").removeClass("active");
 		$("header").removeClass("change");
 		$(this).addClass("active");
@@ -14,14 +13,23 @@ $(document).ready(function() {
 			{
 				scrollTop: $($(this).prop("hash")).offset().top
 			},
-			"slow"
+			900
 		);
 	});
 	//change header background if scroll over disco section
 	$(window).scroll(function() {
-		if ($(this).scrollTop() > $(".disco").offset().top)
+		if ($(this).scrollTop() > $(".disco").offset().top) {
 			$("header").addClass("active");
-		else $("header").removeClass("active");
+			$('.banner i').show();
+		}	
+		else {
+			$("header").removeClass("active");
+			$(".banner i").hide();
+		}
+		$('section').each(function () {
+			if ($(window).scrollTop() > $(this).offset().top - $('header').height())
+				$(this).addClass('animate');
+		})
 	});
 
 	$(".slider__slick").slick({
@@ -36,103 +44,90 @@ $(document).ready(function() {
 		slidesToScroll: 1
 	});
 	$(document).ready(function() {
-		if (
-			$(".box__btn")
-				.children()
-				.is(":visible")
-		)
-			$(".box__item")
-				.first()
-				.addClass("active");
+		if ($(".box__btn").children().is(":visible"))
+			$(".box__item").first().addClass("active");
 		else $(".box__item").removeClass("active");
 		$(".box__item").each(function() {
-			if (
-				!$(this).hasClass("active") &&
-				$(".box__btn")
-					.children()
-					.is(":visible")
-			)
+			if (!$(this).hasClass("active") && $(".box__btn").children().is(":visible"))
 				$(this).hide();
-			if (
-				!$(this).hasClass("active") &&
-				$(".box__btn")
-					.children()
-					.is(":hidden")
-			)
+			if (!$(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
 				$(this).show();
 		});
 	});
 	$(window).resize(function() {
-		if (
-			$(".box__btn")
-				.children()
-				.is(":visible")
-		)
-			$(".box__item")
-				.first()
-				.addClass("active");
+		if ($(".box__btn").children().is(":visible"))
+			$(".box__item").first().addClass("active");
 		else $(".box__item").removeClass("active");
 		$(".box__item").each(function() {
-			if (
-				!$(this).hasClass("active") &&
-				$(".box__btn")
-					.children()
-					.is(":visible")
-			)
+			if (!$(this).hasClass("active") &&$(".box__btn").children().is(":visible"))
 				$(this).hide();
-			if (
-				!$(this).hasClass("active") &&
-				$(".box__btn")
-					.children()
-					.is(":hidden")
-			)
+			if (!$(this).hasClass("active") &&$(".box__btn").children().is(":hidden"))
 				$(this).show();
 		});
 	});
 	$(".btn__next").click(function() {
 		for (var j = $(".box__item").length - 1; j >= 0; j--) {
-			if (
-				$($(".box__item")[j]).hasClass("active") &&
-				j < $(".box__item").length - 1
-			) {
-				$(".box__item")
-					.removeClass("active")
-					.hide();
-				$($(".box__item")[j + 1])
-					.addClass("active")
-					.show();
+			if ($($(".box__item")[j]).hasClass("active") && j < $(".box__item").length - 1) {
+				$(".box__item").removeClass("active").hide();
+				$($(".box__item")[j + 1]).addClass("active").show();
 			}
-			if (
-				$($(".box__item")[j]).hasClass("active") &&
-				j == $(".box__item").length - 1
-			) {
-				$($(".box__item")[j])
-					.removeClass("active")
-					.hide();
-				$($(".box__item")[0])
-					.addClass("active")
-					.show();
+			if ($($(".box__item")[j]).hasClass("active") && j == $(".box__item").length - 1) {
+				$($(".box__item")[j]).removeClass("active").hide();
+				$($(".box__item")[0]).addClass("active").show();
 			}
 		}
 	});
 	$(".btn__prev").click(function() {
 		for (var i = 0; i < $(".box__item").length; i++) {
 			if ($($(".box__item")[i]).hasClass("active") && i > 0) {
-				$(".box__item")
-					.removeClass("active")
-					.hide();
-				$($(".box__item")[i - 1])
-					.addClass("active")
-					.show();
+				$(".box__item").removeClass("active").hide();
+				$($(".box__item")[i - 1]).addClass("active").show();
 			}
 			if ($($(".box__item")[0]).hasClass("active")) {
-				$($(".box__item")[0])
-					.removeClass("active")
-					.hide();
-				$($(".box__item")[$(".box__item").length - 1])
-					.addClass("active")
-					.show();
+				$($(".box__item")[0]).removeClass("active").hide();
+				$($(".box__item")[$(".box__item").length - 1]).addClass("active").show();
 			}
 		}
-	});
+    });
+    $(".history__slick").slick({
+			centerMode: true,
+			centerPadding: "30px",
+			dot: false,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 5,
+			prevArrow: '<i class="btn__prev"></i>',
+			nextArrow: '<i class="btn__next"></i>',
+			responsive: [
+				{
+					breakpoint:992,
+					settings: {
+						centerPadding: "40px",
+						slidesToShow: 3
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						centerPadding: "40px",
+						slidesToShow: 3
+					}
+				},
+				{
+					breakpoint: 575,
+					settings: {
+						centerPadding: "40px",
+						slidesToShow: 1
+					}
+				}
+			]
+		}); 
+	$('.banner i').click(function () {  
+		$("html,body").animate(
+			{
+				scrollTop: 0
+			},
+			1000
+		);
+	})
 });

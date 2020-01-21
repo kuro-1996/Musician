@@ -26,12 +26,8 @@ $(document).ready(function() {
 			$("header").removeClass("active");
 			$(".banner i").hide();
 		}
-		$('section').each(function () {
-			if ($(window).scrollTop() > $(this).offset().top - $('header').height())
-				$(this).addClass('animate');
-		})
 	});
-
+	//slider section slick
 	$(".slider__slick").slick({
 		dots: true,
 		loop: true,
@@ -43,52 +39,49 @@ $(document).ready(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
+	//event section in mobile
 	$(document).ready(function() {
 		if ($(".box__btn").children().is(":visible"))
-			$(".box__item").first().addClass("active");
+			$(".box__item").first().addClass("active"); //set default for first item
 		else $(".box__item").removeClass("active");
 		$(".box__item").each(function() {
 			if (!$(this).hasClass("active") && $(".box__btn").children().is(":visible"))
-				$(this).hide();
-			if (!$(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
-				$(this).show();
+				$(this).hide(); //hide item not has class active
+			if ($(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
+				$(this).show(); //show item has class active
 		});
 	});
+	//event section resize to mobile
 	$(window).resize(function() {
 		if ($(".box__btn").children().is(":visible"))
-			$(".box__item").first().addClass("active");
+			$(".box__item").first().addClass("active"); //set default for first item
 		else $(".box__item").removeClass("active");
 		$(".box__item").each(function() {
 			if (!$(this).hasClass("active") &&$(".box__btn").children().is(":visible"))
-				$(this).hide();
+				$(this).hide(); //hide item not has class active
 			if (!$(this).hasClass("active") &&$(".box__btn").children().is(":hidden"))
-				$(this).show();
+				$(this).show(); //show item has class active
 		});
 	});
+	//event section's next btn action 
 	$(".btn__next").click(function() {
 		for (var j = $(".box__item").length - 1; j >= 0; j--) {
 			if ($($(".box__item")[j]).hasClass("active") && j < $(".box__item").length - 1) {
 				$(".box__item").removeClass("active").hide();
 				$($(".box__item")[j + 1]).addClass("active").show();
 			}
-			if ($($(".box__item")[j]).hasClass("active") && j == $(".box__item").length - 1) {
-				$($(".box__item")[j]).removeClass("active").hide();
-				$($(".box__item")[0]).addClass("active").show();
-			}
 		}
 	});
+	//event section's prev btn action 
 	$(".btn__prev").click(function() {
 		for (var i = 0; i < $(".box__item").length; i++) {
 			if ($($(".box__item")[i]).hasClass("active") && i > 0) {
 				$(".box__item").removeClass("active").hide();
 				$($(".box__item")[i - 1]).addClass("active").show();
 			}
-			if ($($(".box__item")[0]).hasClass("active")) {
-				$($(".box__item")[0]).removeClass("active").hide();
-				$($(".box__item")[$(".box__item").length - 1]).addClass("active").show();
-			}
 		}
-    });
+	});
+	//history section slick
     $(".history__slick").slick({
 			centerMode: true,
 			centerPadding: "30px",
@@ -121,7 +114,8 @@ $(document).ready(function() {
 					}
 				}
 			]
-		}); 
+	}); 
+	//scroll to top btn click action
 	$('.banner i').click(function () {  
 		$("html,body").animate(
 			{

@@ -123,3 +123,9 @@
     opacity: 0;
   }
 }
+
+@include keyframes(roll){
+  100%{
+    transform: translate(-50%) rotate(360deg);
+  }
+}

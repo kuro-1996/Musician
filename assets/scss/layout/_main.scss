@@ -33,14 +33,11 @@
 			color: #000000;
 		}
 	}
-	svg{
-		animation: roll 2s infinite;
+	.roll{
+		animation: roll 1s linear infinite;
 		position: absolute;
 		left: 50%;
 		top: 20%;
-		&:hover{
-			fill: #000000;
-		}
 		transform: translate(-50%);
 		@media screen and (max-width: 991px){
 			width: 60px;
@@ -406,18 +403,13 @@
 					width: 110%;
 				}
 				@media screen and (max-width: 575px) {
-					width: 95%;
-				}
-				@media screen and (max-width: 450px) {
 					top: 76%;
 					width: 250px;
 				}
 			}
 			@media screen and (max-width: 575px) {
-				padding: 0 20px 0 20px;
+				padding: 0 80px 0 80px;
 				@include font-size(40px);
-			}
-			@media screen and (max-width: 450px) {
 				&::before {
 					width: 130px;
 					height: 1px;
@@ -429,6 +421,12 @@
 					transform: translate(-50%);
 					z-index: 1;
 				}
+			}
+			@media screen and (max-width: 450px){
+				padding: 0 50px 0 50px;
+			}
+			@media screen and (max-width: 375px){
+				padding: 0;
 			}
 		}
 		p {

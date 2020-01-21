@@ -125,11 +125,7 @@
 }
 
 @include keyframes(roll){
-  0%{
-    fill: hue-rotate(0deg);
-  }
   100%{
     transform: translate(-50%) rotate(360deg);
-    fill: hue-rotate(360deg);
   }
 }

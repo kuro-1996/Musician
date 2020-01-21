@@ -7885,9 +7885,9 @@ header .menu a.active::after {
   color: #000000;
 }
 
-.banner svg {
-  -webkit-animation: roll 2s infinite;
-          animation: roll 2s infinite;
+.banner .roll {
+  -webkit-animation: roll 1s linear infinite;
+          animation: roll 1s linear infinite;
   position: absolute;
   left: 50%;
   top: 20%;
@@ -7895,12 +7895,8 @@ header .menu a.active::after {
           transform: translate(-50%);
 }
 
-.banner svg:hover {
-  fill: #000000;
-}
-
 @media screen and (max-width: 991px) {
-  .banner svg {
+  .banner .roll {
     width: 60px;
     height: auto;
     top: 24%;
@@ -7908,21 +7904,21 @@ header .menu a.active::after {
 }
 
 @media screen and (max-width: 767px) {
-  .banner svg {
+  .banner .roll {
     width: 50px;
     top: 23%;
   }
 }
 
 @media screen and (max-width: 575px) {
-  .banner svg {
+  .banner .roll {
     width: 40px;
     top: 20%;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .banner svg {
+  .banner .roll {
     width: 30px;
     top: 22%;
   }
@@ -8441,12 +8437,6 @@ header .menu a.active::after {
 
 @media screen and (max-width: 575px) {
   .latter .latter__header h2::after {
-    width: 95%;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .latter .latter__header h2::after {
     top: 76%;
     width: 250px;
   }
@@ -8454,13 +8444,10 @@ header .menu a.active::after {
 
 @media screen and (max-width: 575px) {
   .latter .latter__header h2 {
-    padding: 0 20px 0 20px;
+    padding: 0 80px 0 80px;
     font-size: 40px;
     font-size: 2.5rem;
   }
-}
-
-@media screen and (max-width: 450px) {
   .latter .latter__header h2::before {
     width: 130px;
     height: 1px;
@@ -8472,6 +8459,18 @@ header .menu a.active::after {
     -webkit-transform: translate(-50%);
             transform: translate(-50%);
     z-index: 1;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .latter .latter__header h2 {
+    padding: 0 50px 0 50px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .latter .latter__header h2 {
+    padding: 0;
   }
 }
 
@@ -10488,24 +10487,16 @@ header .menu a.active::after {
 }
 
 @-webkit-keyframes roll {
-  0% {
-    fill: hue-rotate(0deg);
-  }
   100% {
     -webkit-transform: translate(-50%) rotate(360deg);
             transform: translate(-50%) rotate(360deg);
-    fill: hue-rotate(360deg);
   }
 }
 
 @keyframes roll {
-  0% {
-    fill: hue-rotate(0deg);
-  }
   100% {
     -webkit-transform: translate(-50%) rotate(360deg);
             transform: translate(-50%) rotate(360deg);
-    fill: hue-rotate(360deg);
   }
 }
 /*# sourceMappingURL=main.css.map */

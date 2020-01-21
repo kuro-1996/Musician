@@ -39,28 +39,57 @@ $(document).ready(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
-	//event section in mobile
+
 	// $(document).ready(function() {
-	// 	if ($(".box__btn").children().is(":visible"))
-	// 		$(".box__item").first().addClass("active"); //set default for first item
-	// 	else $(".box__item").removeClass("active");
-	// 	$(".box__item").each(function() {
-	// 		if (!$(this).hasClass("active") && $(".box__btn").children().is(":visible"))
-	// 			$(this).hide(); //hide item not has class active
-	// 		if ($(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
-	// 			$(this).show(); //show item has class active
-	// 	});
+	// 	if ($(window).width() < 768) {
+	// 		$(".event__box").slick({
+	// 			infinite: true,
+	// 			speed: 500,
+	// 			prevArrow: null,
+	// 			nextArrow: null,
+	// 			slidesToShow: 1,
+	// 			slidesToScroll: 1
+	// 		});
+	// 	} else {
+	// 		$(".event__box").slick("unslick");
+	// 	}
 	// });
+	// $(window).resize(function() {
+	// 	if ($(window).width() < 768) {
+	// 		$(".event__box").slick({
+	// 			infinite: true,
+	// 			speed: 500,
+	// 			prevArrow: null,
+	// 			nextArrow: null,
+	// 			slidesToShow: 1,
+	// 			slidesToScroll: 1
+	// 		});
+	// 	} else {
+	// 		$(".event__box").slick("unslick");
+	// 	}
+	// });
+	//event section in mobile
+	$(document).ready(function() {
+		if ($(".box__btn").children().is(":visible"))
+			$(".box__item").first().addClass("active"); //set default for first item
+		else $(".box__item").removeClass("active");
+		$(".box__item").each(function() {
+			if (!$(this).hasClass("active") && $(".box__btn").children().is(":visible"))
+				$(this).hide(); //hide item not has class active
+			if ($(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
+				$(this).show(); //show item has class active
+		});
+	});
 	//event section resize to mobile
 	$(window).resize(function() {
 		if ($(".box__btn").children().is(":visible"))
 			$(".box__item").first().addClass("active"); //set default for first item
 		else $(".box__item").removeClass("active");
 		$(".box__item").each(function() {
-			if (!$(this).hasClass("active") &&$(".box__btn").children().is(":visible"))
-				$(this).hide(); //hide item not has class active
-			if (!$(this).hasClass("active") &&$(".box__btn").children().is(":hidden"))
-				$(this).show(); //show item has class active
+			if (!$(this).hasClass("active") && $(".box__btn").children().is(":visible"))
+				$(this).hide(); 
+			if (!$(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
+				$(this).show(); 
 		});
 	});
 	//event section's next btn action 

@@ -7895,6 +7895,10 @@ header .menu a.active::after {
           transform: translate(-50%);
 }
 
+.banner svg:hover {
+  fill: #000000;
+}
+
 @media screen and (max-width: 991px) {
   .banner svg {
     width: 60px;
@@ -10484,16 +10488,24 @@ header .menu a.active::after {
 }
 
 @-webkit-keyframes roll {
+  0% {
+    fill: hue-rotate(0deg);
+  }
   100% {
     -webkit-transform: translate(-50%) rotate(360deg);
             transform: translate(-50%) rotate(360deg);
+    fill: hue-rotate(360deg);
   }
 }
 
 @keyframes roll {
+  0% {
+    fill: hue-rotate(0deg);
+  }
   100% {
     -webkit-transform: translate(-50%) rotate(360deg);
             transform: translate(-50%) rotate(360deg);
+    fill: hue-rotate(360deg);
   }
 }
 /*# sourceMappingURL=main.css.map */

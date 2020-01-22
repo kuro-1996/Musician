@@ -34,7 +34,7 @@
 		}
 	}
 	.roll{
-		animation: roll 1s linear infinite;
+		animation: roll 2s linear infinite;
 		position: absolute;
 		left: 50%;
 		top: 20%;
@@ -1215,6 +1215,12 @@
 				@media screen and(max-width: 767px) {
 					width: 120%;
 				}
+			}
+		}
+		p{
+			@media screen and (max-width: 767px){
+				white-space: unset;
+				padding: 0 20px;
 			}
 		}
 	}

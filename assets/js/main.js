@@ -39,46 +39,17 @@ $(document).ready(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
-
-	// $(document).ready(function() {
-	// 	if ($(window).width() < 768) {
-	// 		$(".event__box").slick({
-	// 			infinite: true,
-	// 			speed: 500,
-	// 			prevArrow: null,
-	// 			nextArrow: null,
-	// 			slidesToShow: 1,
-	// 			slidesToScroll: 1
-	// 		});
-	// 	} else {
-	// 		$(".event__box").slick("unslick");
-	// 	}
-	// });
-	// $(window).resize(function() {
-	// 	if ($(window).width() < 768) {
-	// 		$(".event__box").slick({
-	// 			infinite: true,
-	// 			speed: 500,
-	// 			prevArrow: null,
-	// 			nextArrow: null,
-	// 			slidesToShow: 1,
-	// 			slidesToScroll: 1
-	// 		});
-	// 	} else {
-	// 		$(".event__box").slick("unslick");
-	// 	}
-	// });
 	//event section in mobile
-	$(document).ready(function() {
-		if ($(".box__btn").children().is(":visible"))
-			$(".box__item").first().addClass("active"); //set default for first item
-		else $(".box__item").removeClass("active");
-		$(".box__item").each(function() {
-			if (!$(this).hasClass("active") && $(".box__btn").children().is(":visible"))
-				$(this).hide(); //hide item not has class active
-			if ($(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
-				$(this).show(); //show item has class active
-		});
+	$(document).ready(function () {
+			if ($(".box__btn").children().is(":visible"))
+				$(".box__item").first().addClass("active"); //set default for first item
+			else $(".box__item").removeClass("active");
+			$(".box__item").each(function () {
+				if (!$(this).hasClass("active") && $(".box__btn").children().is(":visible"))
+					$(this).hide(); //hide item not has class active
+				if ($(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
+					$(this).show(); //show item has class active
+			});
 	});
 	//event section resize to mobile
 	$(window).resize(function() {
@@ -91,6 +62,22 @@ $(document).ready(function() {
 			if (!$(this).hasClass("active") && $(".box__btn").children().is(":hidden"))
 				$(this).show(); 
 		});
+		if (window.matchMedia("(max-width: 991px)").matches) {
+			$('.line__item').hide();
+			$('.line__item.active').show();
+		}
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			$('.line__item').show();
+		}
+		// if (window.matchMedia("(min-width: 1200px)").matches) {
+		// 	$(".line__item").removeClass('center,prev,next,last-left,last-right').show();
+		// 	$('.line__item').eq(1).removeClass('center,prev,next,last-left,last-right').addClass('last-left');
+		// 	$('.line__item').eq(2).removeClass('center,prev,next,last-left,last-right').addClass('prev');
+		// 	$('.line__item').eq(3).removeClass('center,prev,next,last-left,last-right').addClass('center');
+		// 	$('.line__item').eq(4).removeClass('center,prev,next,last-left,last-right').addClass('next');
+		// 	$('.line__item').eq(5).removeClass('center,prev,next,last-left,last-right').addClass('last-right');
+		// }
+			//show history's timeline item if screen bigger than 768px
 	});
 	//event section's next btn action 
 	$(".btn__next").click(function() {
@@ -110,41 +97,58 @@ $(document).ready(function() {
 			}
 		}
 	});
-	//history section slick
-    $(".history__slick").slick({
-			centerMode: true,
-			centerPadding: "30px",
-			dot: false,
-			infinite: true,
-			speed: 500,
-			slidesToShow: 5,
-			prevArrow: '<i class="btn__prev"></i>',
-			nextArrow: '<i class="btn__next"></i>',
-			responsive: [
-				{
-					breakpoint:992,
-					settings: {
-						centerPadding: "40px",
-						slidesToShow: 3
-					}
-				},
-				{
-					breakpoint: 768,
-					settings: {
-						centerPadding: "40px",
-						slidesToShow: 3
-					}
-				},
-				{
-					breakpoint: 575,
-					settings: {
-						centerPadding: "40px",
-						slidesToShow: 1
-					}
+	//history section right-dot click function
+	$(".line__dot-right").click(function () {
+		// if (window.matchMedia('(max-width: 1199px)').matches && !$('.line__item.next').hasClass('end')) {
+		// 	$('.line__item.prev').removeClass('prev').addClass('last-left').hide();
+		// 	$('.line__item.last-right').removeClass('last-right').addClass('next').show();
+		// 	$('.line__item.center').removeClass('center').addClass('prev').next().addClass('center').removeClass('next');	
+		// }
+		// if (window.matchMedia('(max-width: 1199px)').matches && $('.line__item.prev').prev().hasClass('end')) {
+		// 	$('.line__item.next').next().addClass('last-right').removeClass('next');
+		// 	$('.line__item.prev').prev().addClass('last-left').removeClass('prev');
+		// };
+		
+		if (window.matchMedia('(max-width: 991px)').matches){
+			for (var j = $(".line__item").length - 1; j >= 0; j--) {
+				//show next item after click
+				if ($($(".line__item")[j]).hasClass("active") && j < $(".line__item").length - 1) {
+					$(".line__item").removeClass("active").hide();
+					$($(".line__item")[j + 1]).addClass("active").show();
 				}
-			]
-	}); 
-	//scroll to top btn click action
+			}
+		}	
+	});
+	//history section left-dot click function
+	$(".line__dot-left").click(function () {
+		// if (window.matchMedia('(max-width: 1199px)').matches && !$('.line__item.prev').hasClass('end')) {
+		// 	$('.line__item.next').removeClass('next').addClass('last-right').hide();
+		// 	$('.line__item.last-left').removeClass('last-left').addClass('prev').show();
+		// 	$('.line__item.center').removeClass('center').addClass('next').prev().addClass('center').removeClass('prev');	
+		// }
+		// if (window.matchMedia('(max-width: 1199px)').matches && $('.line__item.next').next().hasClass('end')) {
+		// 	$('.line__item.next').next().addClass('last-right').removeClass('next');
+		// 	$('.line__item.prev').prev().addClass('last-left').removeClass('prev');
+		// };
+		
+		if (window.matchMedia('(max-width: 991px)').matches) {
+			for (var i = 0; i < $(".line__item").length; i++) {
+				//show previous item after click
+				if ($($(".line__item")[i]).hasClass("active") && i > 0) {
+					$(".line__item").removeClass("active").hide();
+					$($(".line__item")[i - 1]).addClass("active").show();
+				}
+			}
+		}
+	});
+	//history section timeline heading click function
+	$('.line__item h4').each(function () {
+		$(this).click(function () {
+			$(".line__item").removeClass('active');
+			$(this).parent().addClass("active");
+		})
+	});
+	//scroll to top button click action
 	$('.banner i').click(function () {  
 		$("html,body").animate(
 			{
@@ -153,4 +157,5 @@ $(document).ready(function() {
 			1000
 		);
 	})
+	
 });

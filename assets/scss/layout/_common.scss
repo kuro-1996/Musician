@@ -45,11 +45,11 @@ img {
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		color: #976b4f;
-		@include font-size(50.5px);
-		letter-spacing: 6px;
+		@include font-size(50.49px);
+		letter-spacing: 0.118em;
 		position: relative;
 		z-index: 2;
-		margin-bottom: 36px;
+		margin-bottom: 35px;
 		@media screen and (max-width: 575px) {
 			@include font-size(40px);
 			margin-bottom: 20px;
@@ -76,11 +76,11 @@ img {
 		font-family: "Open Sans", sans-serif;
 		@include font-size(14px);
 		text-align: center;
-		letter-spacing: 1px;
-		word-spacing: 3px;
+		color: #798285;
+		letter-spacing: 0.118em;
 		white-space: pre-line;
-		line-height: 1.7;
-		@media screen and (max-width: 767px){
+		line-height: 24.27px;
+		@media screen and (max-width: 991px){
 			white-space: unset;
 		}
 	}

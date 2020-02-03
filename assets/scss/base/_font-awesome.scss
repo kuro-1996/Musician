@@ -57,3 +57,10 @@
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
+
+@font-face {
+  font-family: 'myriad pro';
+  font-style: normal;
+  font-weight: 500;
+  src: url('#{$fa-font-path}/Myriad Pro Regular.ttf') format('truetype');
+}

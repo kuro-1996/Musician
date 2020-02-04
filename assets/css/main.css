@@ -7890,15 +7890,11 @@ header .menu a.active::after {
   right: 30px;
   bottom: 50px;
   cursor: pointer;
-  color: #7f8385;
+  color: #000000;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-animation: upDown .5s infinite alternate;
-          animation: upDown .5s infinite alternate;
-}
-
-.banner i:hover {
-  color: #000000;
+  -webkit-animation: upDown 0.5s infinite alternate;
+          animation: upDown 0.5s infinite alternate;
 }
 
 @media screen and (max-width: 375px) {
@@ -10026,14 +10022,12 @@ header .menu a.active::after {
 .history .line__item.last-left h4,
 .history .line__item.last-left p {
   padding-left: 30%;
-  white-space: unset;
 }
 
 @media screen and (max-width: 1199px) {
   .history .line__item.last-left h4,
   .history .line__item.last-left p {
     padding-left: 20%;
-    white-space: pre-line;
   }
 }
 
@@ -10041,6 +10035,23 @@ header .menu a.active::after {
   .history .line__item.last-left h4,
   .history .line__item.last-left p {
     padding: 0;
+  }
+}
+
+.history .line__item.last-left p {
+  padding-left: 0;
+  margin-right: -30%;
+}
+
+@media screen and (max-width: 1199px) {
+  .history .line__item.last-left p {
+    margin-right: -20%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .history .line__item.last-left p {
+    margin: 0;
   }
 }
 
@@ -10107,19 +10118,11 @@ header .menu a.active::after {
   padding-right: 15%;
 }
 
-@media screen and (max-width: 1300px) {
-  .history .line__item.prev h4,
-  .history .line__item.prev p {
-    white-space: unset;
-  }
-}
-
 @media screen and (max-width: 1199px) {
   .history .line__item.prev h4,
   .history .line__item.prev p {
     padding: 0;
     padding-left: 20%;
-    white-space: pre-line;
   }
 }
 
@@ -10193,19 +10196,11 @@ header .menu a.active::after {
   padding-left: 15%;
 }
 
-@media screen and (max-width: 1300px) {
-  .history .line__item.next h4,
-  .history .line__item.next p {
-    white-space: unset;
-  }
-}
-
 @media screen and (max-width: 1199px) {
   .history .line__item.next h4,
   .history .line__item.next p {
     padding: 0;
     padding-right: 20%;
-    white-space: pre-line;
   }
 }
 
@@ -10261,14 +10256,12 @@ header .menu a.active::after {
 .history .line__item.last-right h4,
 .history .line__item.last-right p {
   padding-right: 30%;
-  white-space: unset;
 }
 
 @media screen and (max-width: 1199px) {
   .history .line__item.last-right h4,
   .history .line__item.last-right p {
     padding-right: 20%;
-    white-space: pre-line;
   }
 }
 
@@ -10276,6 +10269,23 @@ header .menu a.active::after {
   .history .line__item.last-right h4,
   .history .line__item.last-right p {
     padding: 0;
+  }
+}
+
+.history .line__item.last-right p {
+  padding-right: 0;
+  margin-left: -30%;
+}
+
+@media screen and (max-width: 1199px) {
+  .history .line__item.last-right p {
+    margin-left: -20%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .history .line__item.last-right p {
+    margin: 0;
   }
 }
 

@@ -500,6 +500,9 @@
 				.item__left {
 					.left__main {
 						padding-right: 50px;
+						@media screen and (max-width: 991px){
+							padding: 0;
+						}
 						@media screen and (max-width: 767px) {
 							padding-right: 20px;
 						}
@@ -518,15 +521,15 @@
 				background: #f5f6f6;
 				padding: 29px 0 37px 35px;
 				position: relative;
-				@media screen and (max-width: 1199px) {
-					padding: 20px;
-				}
+				// @media screen and (max-width: 1199px) {
+				// 	padding: 20px;
+				// }
 				@media screen and (max-width: 991px) {
-					padding: 15px;
+					padding: 30px;
 				}
 				@media screen and (max-width: 767px) {
 					width: 100%;
-					padding: 15px;
+					padding: 20px;
 				}
 				&::after {
 					content: "";
@@ -587,9 +590,6 @@
 					}
 					@media screen and (max-width: 991px) {
 						margin-bottom: 20px;
-						padding-right: 20px;
-					}
-					@media screen and (max-width: 575px) {
 						padding: 0;
 					}
 					a {
@@ -615,7 +615,7 @@
 				.left__footer {
 					display: flex;
 					@media screen and (max-width: 375px) {
-						flex-flow: column-reverse;
+						flex-flow: column;
 					}
 					a {
 						width: 195px;
@@ -638,6 +638,9 @@
 							width: 130px;
 							height: 35px;
 							line-height: 34px;
+						}
+						@media screen and (max-width: 375px){
+							margin-bottom: 10px;
 						}
 						&:hover {
 							box-shadow: 3px 5px 5px rgba(#000000, 0.3);
@@ -664,7 +667,6 @@
 						}
 						@media screen and (max-width: 375px) {
 							margin: 0;
-							margin-bottom: 10px;
 						}
 						.social__item {
 							margin-right: 20px;
@@ -679,11 +681,15 @@
 							@media screen and (max-width: 991px) {
 								margin-right: 20px;
 								flex-flow: column;
+								align-items: center;
 							}
 						}
 						color: #999999;
 						svg {
 							margin-right: 9px;
+							@media screen and (max-width: 991px){
+								margin: 0;
+							}
 						}
 					}
 				}
